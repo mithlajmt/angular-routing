@@ -10,15 +10,18 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CoursesComponent } from './courses/courses.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { SelectedcourseComponent } from './selectedcourse/selectedcourse.component';
 
 
 
 const routes:Routes=[
   { path: 'product', redirectTo: 'About', pathMatch: 'prefix' },  //pathmach :prefix
+  { path: 'doco', redirectTo: 'Home', pathMatch: 'full' },  //pathmach :prefix
   { path: '', redirectTo: 'Home', pathMatch: 'full' },  //pathmach :prefix
   {path:'Home' ,component:HomeComponent},
   {path:'About',component:AboutComponent},
   {path:'Courses',component:CoursesComponent},
+  {path:'Courses/:id',component:SelectedcourseComponent},
   {path:'**', component:NotfoundComponent}
 ]
 
@@ -30,7 +33,8 @@ const routes:Routes=[
     HomeComponent,
     AboutComponent,
     CoursesComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SelectedcourseComponent
   ],
   imports: [
     BrowserModule,
