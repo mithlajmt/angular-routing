@@ -1,1 +1,19 @@
-<p>selectedcourse works!</p>
+<!-- selectedcourse.component.html -->
+
+<div *ngIf="selectedCourse" class="course-container" [@fadeInOut]>
+    <h2>{{ selectedCourse.title }}</h2>
+    <div class="course-details">
+      <p class="price">$ {{ selectedCourse.price }}</p>
+      <p class="description">{{ selectedCourse.desc }}</p>
+      <p class="rating">Rating: {{ selectedCourse.rating }}</p>
+      <p class="duration">Duration: {{ selectedCourse.duration }} hours</p>
+      <p class="author">Author: {{ selectedCourse.author }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="!selectedCourse" class="not-found">
+    <p>Course not found</p>
+  </div>
+
+  <!-- <h1>hi</h1> -->
+  

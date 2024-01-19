@@ -1,0 +1,60 @@
+/* selectedcourse.component.css */
+
+.course-container {
+    background: linear-gradient(to bottom right, #3498db, #e74c3c);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .course-container:hover {
+    background: linear-gradient(to bottom right, #2ecc71, #f39c12);
+  }
+  
+  .course-details {
+    margin-top: 15px;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-style: italic;
+  }
+  
+  .rating {
+    margin-top: 10px;
+  }
+  
+  .duration {
+    margin-top: 10px;
+  }
+  
+  .author {
+    margin-top: 10px;
+  }
+  
+  .not-found {
+    color: #e74c3c;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeInOut {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
