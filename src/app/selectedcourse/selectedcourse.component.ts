@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../services/courses.service';
 
@@ -9,21 +9,31 @@ import { CourseService } from '../services/courses.service';
   providers:[CourseService]
 
 })
-export class SelectedcourseComponent implements OnInit {
+export class SelectedcourseComponent implements OnInit,OnDestroy {
   
   idnum!:number;
-  selectedCourse:any
+  selectedCourse:any;
+  obs:any
   
   // Inject ActivatedRoute through the constructor
   constructor(private router: ActivatedRoute, private courses:CourseService) { }
   
   ngOnInit(): void {
     // Use optional chaining to handle the possibility of null or undefined
-    this.idnum = Number(this.router?.snapshot.paramMap.get('id'));
-    console.log(this.idnum);
+    // this.idnum = Number(this.router?.snapshot.paramMap.get('id'));
+
+
+    this.obs=this.router.paramMap.subscribe((data)=>{
+      this.idnum = Number(data.get('id'))
+      this.selectedCourse = this.courses.courses.find((data) => data.id === this.idnum);
+
+    })
+    // console.log(this.idnum);
   
     // Corrected assignment of selectedCourse
-    this.selectedCourse = this.courses.courses.find((data) => data.id === this.idnum);
+  }
+  ngOnDestroy(): void {
+    this.obs.unsubscribe()
   }
   
     

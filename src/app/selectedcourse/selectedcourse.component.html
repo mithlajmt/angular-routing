@@ -9,6 +9,8 @@
       <p class="duration">Duration: {{ selectedCourse.duration }} hours</p>
       <p class="author">Author: {{ selectedCourse.author }}</p>
     </div>
+    <button *ngIf="selectedCourse?.id !==1" [routerLink]="['../', selectedCourse.id - 1]">see previous</button>
+<button [routerLink]="['../', selectedCourse.id + 1]">See Next</button>
   </div>
   
   <div *ngIf="!selectedCourse" class="not-found">
