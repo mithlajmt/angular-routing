@@ -11,19 +11,12 @@ import { AboutComponent } from './about/about.component';
 import { CoursesComponent } from './courses/courses.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SelectedcourseComponent } from './selectedcourse/selectedcourse.component';
+import { LoginComponent } from './login/login.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
-const routes:Routes=[
-  { path: 'product', redirectTo: 'About', pathMatch: 'prefix' },  //pathmach :prefix
-  { path: 'doco', redirectTo: 'Home', pathMatch: 'full' },  //pathmach :prefix
-  { path: '', redirectTo: 'Home', pathMatch: 'full' },  //pathmach :prefix
-  {path:'Home' ,component:HomeComponent},
-  {path:'About',component:AboutComponent},
-  {path:'Courses',component:CoursesComponent},
-  {path:'Courses/:id',component:SelectedcourseComponent},
-  {path:'**', component:NotfoundComponent}
-]
+
 
 @NgModule({
   declarations: [
@@ -34,12 +27,14 @@ const routes:Routes=[
     AboutComponent,
     CoursesComponent,
     NotfoundComponent,
-    SelectedcourseComponent
+    SelectedcourseComponent,
+    LoginComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    // RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
