@@ -8,6 +8,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuardService } from './services/authguard.service';
+import { canActivate, canActivateChild } from './auth.guard';
 
 
 const routes: Routes = [
@@ -17,8 +18,9 @@ const routes: Routes = [
   {path:'Home' ,component:HomeComponent},
   {path:'About',component:AboutComponent},
   {path:'Courses',component:CoursesComponent},
-  {path:'Courses',children:[
-    {path:'Checkout',component:CheckoutComponent,canActivate:[AuthGuardService]}
+  {path:'Courses',canActivateChild:[canActivateChild],children:[
+    {path:'Checkout',component:CheckoutComponent,canActivate: [canActivate],
+  }
   ]},
   {path:'Courses/:id',component:SelectedcourseComponent},
   {path:'login',component:LoginComponent},
