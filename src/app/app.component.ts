@@ -47,32 +47,34 @@ export class AppComponent {
       // this.form.value.userName = userName
       // console.log(this.form.value.userName)
   
-      this.form.setValue({
-        firstName: this.form.value.firstName,
-        lastName: this.form.value.lastName,
-        email: this.form.value.email,
-        phoneNumber: this.form.value.phoneNumber,
-        dob: this.form.value.dob,
-        gender: this.form.value.gender,
+      // this.form.setValue({
+      //   firstName: this.form.value.firstName,
+      //   lastName: this.form.value.lastName,
+      //   email: this.form.value.email,
+      //   phoneNumber: this.form.value.phoneNumber,
+      //   dob: this.form.value.dob,
+      //   gender: this.form.value.gender,
+      //   userName: userName,
+      //   address: {
+      //     street1: this.form.value.address.street1,
+      //     street2: this.form.value.address.street2,
+      //     country: this.form.value.address.country,
+      //     city: this.form.value.address.city,
+      //     region: this.form.value.address.region,
+      //     postalCode: this.form.value.address.postalCode
+      //   }
+      // })
+  
+      this.form.form.patchValue({
         userName: userName,
         address: {
-          street1: this.form.value.address.street1,
-          street2: this.form.value.address.street2,
-          country: this.form.value.address.country,
-          city: this.form.value.address.city,
-          region: this.form.value.address.region,
-          postalCode: this.form.value.address.postalCode
+          country: 'Japan'
         }
       })
-  
-      // this.form.form.patchValue({
-        // username: username,
-        // address: {
-        //   country: 'Japan'
-        // }
-      // })
      }
   }
+
+  
 
   
   
